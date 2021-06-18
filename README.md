@@ -16,11 +16,11 @@ Provide a __deep exploratory analysis__ on the correlation __between features__ 
 
 24 models have been trained, one for each point. The predicted value of one model is fed into the the next model.
 
-![Rolling features](figures/rolling_features.png)
-*Schema used to train the models*
+<p align="center">
+  <img src="figures/rolling_features.png" alt="Rolling features" width="95%" />
+</p>
 
 Same features are used in all the models but with a different subset of products because, as we are moving forward, we have less products to train our model.
-
 
 | Description                              	| Numer of products 	|
 |------------------------------------------	|-------------------	|
@@ -33,7 +33,6 @@ Same features are used in all the models but with a different subset of products
 | Number of products to train model `y_22` 	|        778        	|
 | Number of products to train model `y_23` 	|        768        	|
 
-
 ## Tuning parameters
 
 Parameters have been tunned using a nested *GroupKFold* to get an unbiased estimate of the performance of the model.
@@ -45,8 +44,9 @@ With this approach, we end up with up to three different models for each point. 
 
 This procedure has been done for each of the 24 models
 
-![Nested cross validation. 5x2 setup](figures/nested_cv.png)
-*Image from [https://sebastianraschka.com](https://sebastianraschka.com/blog/2018/model-evaluation-selection-part4.html)*
+<p align="center">
+  <img src="figures/nested_cv.png" height="450" />
+</p>
 
 ## Features
 
@@ -99,26 +99,33 @@ During the training process we have been tracking the Mean Absolute Error (MAE),
 
 We can track the metrics for each model. As looking at the mean errors is quite limiting, we should also look at the standard deviation to assess the dispersion of the score.
 
-![](figures/mae_train_error.png)
+<p align="center">
+  <img src="figures/mae_train_error.png"/>
+</p>
 
 ## Coverage Fraction
 
 The coverage fraction calculates what percentage of the predicted points falls within the intervals.
 
-![](figures/coverage_train_error.png)
+<p align="center">
+  <img src="figures/coverage_train_error.png"/>
+</p>
 
 ## Predicted vs Target
 
 Perfect predictions would be in the diagonal line, so the more points on the diagonal line, the better the model will be for that point. The first few points are more difficult to predict than the rest.
 
-![](figures/predicted_vs_target.png)
+<p align="center">
+  <img src="figures/predicted_vs_target.png"/>
+</p>
 
 ## Feature importance
 
 Feature importances are different in every model. For this model, `y_0`, *channel_rate_C*, *country*, *num_generics* and some *lags* are the most important features.
 
-![Shap values of the first model (y_0) after generics entry](figures/shap_values.png)
-
+<p align="center">
+  <img src="figures/shap_values.png" alt="Shap values of the first model (y_0) after generics entry"/>
+</p>
 
 # Contact ✒️
 
