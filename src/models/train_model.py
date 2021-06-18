@@ -25,7 +25,7 @@ SCORING = {
 }
 
 # Define fold strategy
-outer_cv = GroupKFold(n_splits=5)  # for generalization
+outer_cv = GroupKFold(n_splits=5)   # for generalization
 inner_cv = GroupKFold(n_splits=20)  # for model hyper-param selection
 
 
