@@ -17,7 +17,7 @@ def get_logger(log_name: str) -> logging.Logger:
 
     # Logger to file
     # file_path = log_name + datetime.datetime.today().strftime("_%Y_%m_%d.log")
-    file_path = log_name  # + datetime.datetime.today().strftime("_%Y_%m_%d.log")
+    file_path = log_name + ".log" # + datetime.datetime.today().strftime("_%Y_%m_%d.log")
     log_file_path = PATH_DATA_LOGS / file_path  # str(log_dir_path / file_path )
     file_handler = logging.FileHandler(filename=log_file_path)
     file_handler.setFormatter(formatter)
