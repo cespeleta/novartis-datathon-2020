@@ -25,7 +25,7 @@ create-features:
 
 train-models:
 	python src/models/train_model.py --help
-	python src/models/train_model.py --dataset win_len_24 --n_iter_search 100 --target_cols y_0
+	python src/models/train_model.py --dataset win_len_24 --n_iter_search 100
 
 forecast:
 	python src/models/predict_model.py --help
